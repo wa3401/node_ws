@@ -1,0 +1,2 @@
+autoturtle:beginner_tutorials:f1tenth_simulator:gap_follow:lab2:lidarlab:pot_field:scan_matching:wall_follow
+-DCATKIN_DEVEL_PREFIX=/home/williamanderson/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/williamanderson/catkin_ws/install -G Unix Makefiles

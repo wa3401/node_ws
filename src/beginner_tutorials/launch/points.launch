@@ -1,0 +1,4 @@
+<launch>
+  <node name="points" pkg="beginner_tutorials" type="points.py" output="screen"/>
+  <node name="lidar_processing" pkg="beginner_tutorials" type="lidar_processing.py" output="screen"/>
+</launch>

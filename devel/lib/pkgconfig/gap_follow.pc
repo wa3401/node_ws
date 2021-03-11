@@ -1,0 +1,8 @@
+prefix=/home/williamanderson/catkin_ws/devel
+
+Name: gap_follow
+Description: Description of gap_follow
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

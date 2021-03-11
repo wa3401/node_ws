@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam command="load" file="$(find wall_follow)/params.yaml"/> 
+
+  <!-- Listen to messages from joysicks -->
+  <node pkg="wall_follow" name="wall_follow" type="wall_follow">
+  </node>
+
+  
+</launch>

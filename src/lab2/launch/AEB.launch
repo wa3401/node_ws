@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam command="load" file="$(find lab2)/params.yaml"/> 
+
+  <!-- Listen to messages from joysicks -->
+  <node pkg="lab2" name="AEB" type="AEB">
+  </node>
+
+  
+</launch>

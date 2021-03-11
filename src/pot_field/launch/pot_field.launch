@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam command="load" file="$(find gap_follow.py)/params.yaml"/> 
+
+  <!-- Listen to messages from joysicks -->
+  <node pkg="gap_follow" name="gap_follow" type="gap_follow">
+  </node>
+
+  
+</launch>
