@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam command="load" file="$(find pure_pursuit)/params.yaml"/> 
+
+  <!-- Listen to messages from joysicks -->
+  <node pkg="pure_pursuit" name="Pure" type="Pure">
+  </node>
+
+  
+</launch>
