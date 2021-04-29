@@ -1,0 +1,17 @@
+{ 
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: Launch",
+            "type": "ros",
+            "request": "launch",
+            "target": "/home/williamanderson/catkin_ws/src/pure_pursuit/launch/pure.launch"
+        },
+       
+        {
+            "name": "Ros: Attach",
+            "type": "ros",
+            "request": "attach"
+        }
+    ]
+}

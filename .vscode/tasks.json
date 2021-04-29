@@ -1,0 +1,22 @@
+{ 
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ROS: catkin_make specific project",
+            "type": "shell",
+            "command": "catkin_make",
+            "args": [
+                "--pkg",
+                "pure_pursuit",
+                "-j4",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+ 

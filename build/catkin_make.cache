@@ -1,2 +1,2 @@
-autoturtle:beginner_tutorials:f1tenth_simulator:gap_follow:lab2:lidarlab:pot_field:scan_matching:wall_follow
--DCATKIN_DEVEL_PREFIX=/home/williamanderson/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/williamanderson/catkin_ws/install -G Unix Makefiles
+autoturtle:beginner_tutorials:f1tenth_simulator:gap_follow:lab2:lidarlab:pot_field:pure_pursuit:scan_matching:wall_follow:waypoint_logger
+-DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/williamanderson/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/williamanderson/catkin_ws/install -G Unix Makefiles

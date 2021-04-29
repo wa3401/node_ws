@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/pure.dir/src/pure.cpp.o  -o /home/williamanderson/catkin_ws/devel/lib/pure_pursuit/pure 

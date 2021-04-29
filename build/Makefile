@@ -1156,6 +1156,19 @@ tf2_msgs_generate_messages_eus/fast:
 .PHONY : tf2_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named Pure
+
+# Build rule for target.
+Pure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Pure
+.PHONY : Pure
+
+# fast build rule for target.
+Pure/fast:
+	$(MAKE) -f pure_pursuit/CMakeFiles/Pure.dir/build.make pure_pursuit/CMakeFiles/Pure.dir/build
+.PHONY : Pure/fast
+
+#=============================================================================
 # Target rules for targets named simulator
 
 # Build rule for target.
@@ -1465,6 +1478,7 @@ help:
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... Pure"
 	@echo "... simulator"
 	@echo "... ackermann_msgs_generate_messages_py"
 	@echo "... f1tenth_simulator"

@@ -151,6 +151,14 @@
 /home/williamanderson/catkin_ws/build/scan_matching/CMakeFiles/edit_cache.dir
 /home/williamanderson/catkin_ws/build/scan_matching/CMakeFiles/tf2_msgs_generate_messages_eus.dir
 /home/williamanderson/catkin_ws/build/scan_matching/CMakeFiles/rebuild_cache.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/install/strip.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/install/local.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/install.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/list_install_components.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/rebuild_cache.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/edit_cache.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/test.dir
+/home/williamanderson/catkin_ws/build/pure_pursuit/CMakeFiles/Pure.dir
 /home/williamanderson/catkin_ws/build/f1tenth_simulator/CMakeFiles/install/strip.dir
 /home/williamanderson/catkin_ws/build/f1tenth_simulator/CMakeFiles/install.dir
 /home/williamanderson/catkin_ws/build/f1tenth_simulator/CMakeFiles/list_install_components.dir
@@ -182,3 +190,10 @@
 /home/williamanderson/catkin_ws/build/wall_follow/CMakeFiles/edit_cache.dir
 /home/williamanderson/catkin_ws/build/wall_follow/CMakeFiles/test.dir
 /home/williamanderson/catkin_ws/build/wall_follow/CMakeFiles/wall_follow.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/install/strip.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/install/local.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/install.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/list_install_components.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/rebuild_cache.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/edit_cache.dir
+/home/williamanderson/catkin_ws/build/waypoint_logger/CMakeFiles/test.dir

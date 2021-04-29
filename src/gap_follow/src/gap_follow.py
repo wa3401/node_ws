@@ -103,7 +103,7 @@ class reactive_follow_gap:
         drive_st_msg.drive = drive_msg
         prev_drive_st_msg.drive = prev_drive
 
-        if bestPoint > 3: 
+        if proc_ranges[bestPoint] > 3: 
             self.drive_pub.publish(prev_drive_st_msg)
         else :
             self.drive_pub.publish(drive_st_msg)

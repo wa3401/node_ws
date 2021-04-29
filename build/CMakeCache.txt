@@ -47,7 +47,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -498,7 +498,7 @@ lab2_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/lab2
 lab2_SOURCE_DIR:STATIC=/home/williamanderson/catkin_ws/src/lab2
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/noetic/lib/libtf2.so
 
 //Value Computed by CMake
 lidarlab_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/lidarlab
@@ -523,6 +523,14 @@ pot_field_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/pot_field
 
 //Value Computed by CMake
 pot_field_SOURCE_DIR:STATIC=/home/williamanderson/catkin_ws/src/pot_field
+
+//Value Computed by CMake
+pure_pursuit_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/pure_pursuit
+
+pure_pursuit_DIR:PATH=
+
+//Value Computed by CMake
+pure_pursuit_SOURCE_DIR:STATIC=/home/williamanderson/catkin_ws/src/pure_pursuit
 
 //Value Computed by CMake
 race_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/race
@@ -598,6 +606,12 @@ wall_follow_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/wall_follow
 
 //Value Computed by CMake
 wall_follow_SOURCE_DIR:STATIC=/home/williamanderson/catkin_ws/src/wall_follow
+
+//Value Computed by CMake
+waypoint_logger_BINARY_DIR:STATIC=/home/williamanderson/catkin_ws/build/waypoint_logger
+
+//Value Computed by CMake
+waypoint_logger_SOURCE_DIR:STATIC=/home/williamanderson/catkin_ws/src/waypoint_logger
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
@@ -750,7 +764,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
