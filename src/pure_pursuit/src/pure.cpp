@@ -25,8 +25,6 @@
 #include "pure_pursuit/pure_pursuit.h"
 #include "pure_pursuit/types.h"
 
-using namespace std;
-
 class Pure {
 
 private:
@@ -65,7 +63,7 @@ public:
     Pure() :
         //Subscribers and publishers
         n(ros::NodeHandle()),
-        pose_sub(n.subscribe("gt_pose", 5, &Pure::pose_callback, this)),
+        pose_sub(n.subscribe("/gt_pose", 5, &Pure::pose_callback, this)),
         drive_pub(n.advertise<ackermann_msgs::AckermannDriveStamped>("/pure_drive", 1)),
         waypoint_pub(n.advertise<visualization_msgs::Marker>("waypoint_markers", 100)),
 
@@ -82,23 +80,27 @@ public:
         n.getParam("scan_topic", scan_topic);
         pose_topic = "/gt_pose";
         n.getParam("wheelbase", wheelbase);
-        num_waypoints = 700;
+        num_waypoints = 100;
 
         //CSV reader for the waypoint data
         f110::CSVReader reader("/home/williamanderson/catkin_ws/src/pure_pursuit/src/newPoints.csv");
+        ROS_INFO("File has been read");
         //Sets all waypoints into the vector
         waypoints = reader.getData(num_waypoints);
+        ROS_INFO("WayPoints have been made");
         //Wisualizes waypoints
-        visualize_waypoint_data();
+        //visualize_waypoint_data();
         //Waits for 1 second
         ros::Duration(1.0).sleep();
     }
 
     void pose_callback(const geometry_msgs::PoseStamped::ConstPtr &msg){
         ackermann_msgs::AckermannDriveStamped drive_st_msg;
+        ackermann_msgs::AckermannDrive drive_msg;
 
         //Initializes best point to be a WayPoint
         bestPoint = f110::WayPoint(msg);
+        ROS_INFO("Transforming WayPoints");
 
         //Tansforms waypoints to car frame
         const auto transformedWayPoints = transform(waypoints, bestPoint, tfBuffer, tfListener);
@@ -120,6 +122,7 @@ public:
         goalWayPoint.orientation.w = 0;
         //Transforms the goal waypoint
         tf2::doTransform(goalWayPoint, goalWayPoint, mapToBaseLink);
+        ROS_INFO("New Waypoint Found");
 
         //Visualizes the goal waypoint
         add_way_point_visualization(goalWayPoint, "base_link", 1.0, 0.0, 0.0, 0.3, 0.2, 0.2, 0.2);
@@ -174,19 +177,25 @@ public:
         uniqueMarkerId++;
     }
 
-    //Visualizes every 5th waypoint in the waypoint
+    //Visualizes every 5th waypoint in the
     void visualize_waypoint_data(){
         const size_t inc = waypoints.size()/5;
-        for(size_t i = 0, j = 0; i <waypoints.size(); i + i + inc, j++){
+        for(size_t i = 0; i <waypoints.size(); i + i + inc){
             add_way_point_visualization(waypoints[i], "map", 0.0, 0.0, 1.0, 0.5);
         }
+    }
+
+    float findDistance(float p1x, float p1y, float p2x, float p2y){
+        float dx = p1x - p2x;
+        float dy = p1y - p2y;
+        return std::hypot(dx, dy);
     }
 
     
 };
 
 int main(int argc, char ** argv) {
-    ros::init(argc, argv, "pure_pursuit_node");
+    ros::init(argc, argv, "Pure ");
     Pure rw;
     ros::spin();
     return 0;
