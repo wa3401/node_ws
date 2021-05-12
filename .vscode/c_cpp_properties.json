@@ -10,7 +10,8 @@
                 "/home/williamanderson/catkin_ws/src/f1thenth_simulator/include/**",
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/devel/include",
-                "/usr/include/**"
+                "/usr/include/**",
+                "/opt/ros/noetic/include/gmapping/utils"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

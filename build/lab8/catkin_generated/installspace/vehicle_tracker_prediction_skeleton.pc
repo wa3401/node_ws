@@ -1,0 +1,8 @@
+prefix=/home/williamanderson/catkin_ws/install
+
+Name: vehicle_tracker_prediction_skeleton
+Description: Description of vehicle_tracker_prediction_skeleton
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy roscpp std_msgs message_runtime
