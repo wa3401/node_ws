@@ -1,0 +1,5 @@
+<launch>
+    <rosparam command="load" file="$(find car_reactive)/settings.yaml"/>
+    <node pkg="car_reactive" name="carReactive" type="carReactive">
+    </node>
+</launch>

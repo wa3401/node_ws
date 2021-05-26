@@ -75,6 +75,8 @@ tf2/LinearMath/Quaternion.h
 -
 tf/transform_datatypes.h
 -
+tf2_msgs/TFMessage.h
+-
 visualization_msgs/MarkerArray.h
 -
 visualization_msgs/Marker.h

@@ -1,0 +1,8 @@
+prefix=/home/williamanderson/catkin_ws/devel
+
+Name: car_reactive
+Description: Description of car_reactive
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy message_runtime

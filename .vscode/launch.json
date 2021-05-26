@@ -5,7 +5,7 @@
             "name": "ROS: Launch",
             "type": "ros",
             "request": "launch",
-            "target": "/home/williamanderson/catkin_ws/src/pure_pursuit/launch/pure.launch"
+            "target": "/home/williamanderson/catkin_ws/src/vehicle_tracker_prediction_skeleton/launch/detect_apriltags.launch"
         },
        
         {
