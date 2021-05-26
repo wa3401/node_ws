@@ -27,7 +27,7 @@ public:
     ReactiveMethod() {
         n = ros::NodeHandle("~");
         std::string drive_topic, scan_topic;
-        n.getParam("/pure_drive_topic", drive_topic);
+        drive_topic = "/vesc/low_level/ackermann_cmd_mux/input/navigation";
         n.getParam("/scan_topic", scan_topic);
         n.getParam("/max_speed", max_speed);
         n.getParam("/max_steering_angle", max_steering_angle);
@@ -123,10 +123,11 @@ public:
         
         // CALCULATE SPEED BASED ON TIME TO COLLISION DIRECTLY IN FRONT OF IT
         double smallestTTC = std::numeric_limits<double>::infinity();
-        double startSecondThird = ((indexOfMax - indexOfMin) / 3) + indexOfMin;
-        double endSecondThird = startSecondThird + (indexOfMax - indexOfMin) / 3;
+        double oneFifth = ((indexOfMax - indexOfMin) / 5);
+        double startSecondFifth =  2 * oneFifth + indexOfMin;
+        double endSecondFifth = startSecondFifth + oneFifth;
 
-        for(int i = startSecondThird;i<endSecondThird;i++){
+        for(int i = startSecondFifth;i<endSecondFifth;i++){
             if(i>=0 &&i<static_cast<int>(msg->ranges.size())){
                 if(abs(i*msg->angle_increment + msg->angle_min)<.1){
                     float distance = msg->ranges.at(i) - car_radius; // may need to remove car radius added as test
@@ -147,7 +148,7 @@ public:
                 }
             }
         }
-        double relativeTTCDistance  = (smallestTTC-0.5) *currentSpeed; // removing .2 can be allowed I added this to give it somewhat of a buffer so it will always have .2 TTC worth of a gap in distance
+        double relativeTTCDistance  = (smallestTTC - 0.2) *currentSpeed; // removing .2 can be allowed I added this to give it somewhat of a buffer so it will always have .2 TTC worth of a gap in distance
         if(currentSpeed ==0){
             relativeTTCDistance = msg->ranges.at(indexOfZero)-car_radius;
         }
@@ -161,16 +162,16 @@ public:
         if(allowableSpeed<0){
             allowableSpeed = 0;
         }
-        if(abs(steeringAngle) >(20.0/180)*M_PI){
-            if(allowableSpeed >2){
-                allowableSpeed = 1;
-            }
-        }
-        else if(abs(steeringAngle) >(30.0/180)*M_PI){
-            if(allowableSpeed >1){
-                allowableSpeed = 0.5;
-            }
-        }
+        // if(abs(steeringAngle) >(20.0/180)*M_PI){
+        //     if(allowableSpeed >3.5){
+        //         allowableSpeed = 3.5;
+        //     }
+        // }
+        // else if(abs(steeringAngle) >(40.0/180)*M_PI){
+        //     if(allowableSpeed >2.5){
+        //         allowableSpeed = 2.5;
+        //     }
+        // }
         //TODOS
         // MAKE ADJUSTMENTS FOR REALLY BIG HALLYWAYS WHERE CURVE GETS TO CLOSE TO THE WALL
         // ADD A SPACER ON THE SIDE OF THE CAR THAT LIKES TO STAY A DISTANCE FROM THE WALL
@@ -210,7 +211,7 @@ public:
         if(angleOfFarthestPoint<0){
             steeringAngle *= -1;
         }
-        return steeringAngle;
+        return steeringAngle * 0.5;
     }
 
 }; // end of class definition
